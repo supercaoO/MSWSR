@@ -72,12 +72,12 @@ If you find our work useful in your research or publications, please consider ci
 
 2. Run `./results/Prepare_TestData_HR_LR.m` in Matlab to generate HR/LR images with BI degradation model.
 
-3. Edit `./options/test/test_WSR_x248_BI.json` for your needs according to [`./options/test/README.md`.](./options/test/README.md)
+3. Edit `./options/test/test_WSR_x248.json` for your needs according to [`./options/test/README.md`.](./options/test/README.md)
 
 4. Then, run command:
    ```shell
    cd WSR
-   CUDA_VISIBLE_DEVICES=0 python test.py -opt options/test/test_WSR_x248_BI.json
+   CUDA_VISIBLE_DEVICES=0 python test.py -opt options/test/test_WSR_x248.json
    ```
 
 5. Finally, PSNR/SSIM values are shown on your terminal, you can find the reconstruction images in `./results/SR/BI`. You can further evaluate SR results using `./results/Evaluate_PSNR_SSIM.m`.
