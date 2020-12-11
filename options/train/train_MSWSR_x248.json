@@ -1,0 +1,59 @@
+{
+    "mode": "sr",
+    "gpu_ids": [0],
+
+    "max_scale": 8,
+    "is_train": true,
+    "use_chop": true,
+    "rgb_range": 255,
+    "self_ensemble": false,
+    "save_image": true,
+
+    "datasets": {
+        "train": {
+            "mode": "SLRMHR",
+            "dataroot_HR": "./dataset/MSAugment842/DIV2K_train_HR_aug/",
+            "dataroot_LR": "./dataset/MSAugment842/DIV2K_train_LR_aug/x8",
+            "data_type": "npy",
+            "n_workers": 16,
+            "batch_size": 32,
+            "LR_size": 40,
+            "use_flip": true,
+            "use_rot": true,
+            "noise": "."
+        },
+        "val": {
+            "mode": "MLRMHR",
+            "dataroot_HR": "./results/HR/Set5/",
+            "dataroot_LR": "./results/LR/LRBI/Set5/",
+            "data_type": "img"
+        }
+    },
+
+    "networks": {
+        "which_model": "MSWSR",
+        "num_features": 64,
+        "in_channels": 3,
+        "out_channels": 3,
+        "num_groups": 10
+    },
+
+    "solver": {
+        "type": "ADAM",
+        "learning_rate": 0.00004,
+        "weight_decay": 0,
+        "lr_scheme": "MultiStepLR",
+        "lr_steps": [20000],
+        "lr_gamma": 0.5,
+        "loss_type": "l1",
+        "manual_seed": 0,
+        "num_epochs": 20000,
+        "skip_threshold": 3,
+        "split_batch": 1,
+        "save_ckp_step": 50,
+        "save_vis_step": 1,
+        "pretrain": null,
+        "pretrained_path": "./experiments/MSWSR_in3f64_x8/epochs/last_ckp.pth",
+        "wl_weights": [1.0, 1.0, 1.0, 1.0]
+    }
+}

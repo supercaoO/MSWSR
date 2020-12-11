@@ -1,0 +1,57 @@
+{
+    "mode": "sr",
+    "gpu_ids": [0],
+
+    "max_scale": 8,
+    "scale": 8,
+    "degradation": "BI",
+    "is_train": false,
+    "use_chop": true,
+    "rgb_range": 255,
+    "self_ensemble": false,
+
+    "datasets": {
+        "test_set1": {
+            "mode": "MLRMHR",
+            "dataroot_HR": "./results/HR/Set5/",
+            "dataroot_LR": "./results/LR/LRBI/Set5/",
+            "data_type": "img"
+        },
+        "test_set2": {
+            "mode": "MLRMHR",
+            "dataroot_HR": "./results/HR/Set14/",
+            "dataroot_LR": "./results/LR/LRBI/Set14/",
+            "data_type": "img"
+        },
+        "test_set3": {
+            "mode": "MLRMHR",
+            "dataroot_HR": "./results/HR/B100/",
+            "dataroot_LR": "./results/LR/LRBI/B100/",
+            "data_type": "img"
+        },
+        "test_set4": {
+            "mode": "MLRMHR",
+            "dataroot_HR": "./results/HR/Urban100/",
+            "dataroot_LR": "./results/LR/LRBI/Urban100/",
+            "data_type": "img"
+        },
+        "test_set5": {
+            "mode": "MLRMHR",
+            "dataroot_HR": "./results/HR/Manga109/",
+            "dataroot_LR": "./results/LR/LRBI/Manga109/",
+            "data_type": "img"
+        }
+    },
+
+    "networks": {
+        "which_model": "MSWSR",
+        "num_features": 64,
+        "in_channels": 3,
+        "out_channels": 3,
+        "num_groups": 10
+    },
+
+    "solver": {
+        "pretrained_path": "./models/MSWSR_x248.pth"
+    }
+}
