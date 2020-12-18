@@ -12,7 +12,7 @@ We propose a lightweight and fast network (MSWSR) to implement multi-scale SR si
 
 The framework of the proposed MSWSR for (2, 4, 8)x SR tasks. All of the recurrent blocks (RBs) share the same weights.
 
-The details about the S-IMDB can be found in [our main paper (wait to be released)](https://dl.acm.org/doi/10.1145/3394171.3413664).
+The details about the S-IMDB can be found in [the early access version of our main paper](https://doi.org/10.1109/JSTSP.2020.3045282).
 
 If you find our work useful in your research or publications, please consider citing:
 
@@ -21,7 +21,11 @@ If you find our work useful in your research or publications, please consider ci
     author = {Zhang, Huanrong and Xiao, Jie and Jin, Zhi},
     title = {Multi-scale Image Super-Resolution via A Single Extendable Deep Network},
     journal = {IEEE Journal of Selected Topics in Signal Processing},
-    year= {2021}
+    year= {2020},
+    volume={},
+    number={},
+    pages={1-1},
+    doi={10.1109/JSTSP.2020.3045282}
 }
 ```
 
